@@ -42,3 +42,14 @@ galleryFigures.forEach((figure) => {
         currentPageMain.append(modal);
     })
 });
+
+galleryFigures.forEach((figure) => {
+    let figImg = figure.children[0];
+
+    // if image is landscape, have the figure 
+    // span the full width of the grid
+    if (figImg.height < figImg.width) {
+        figure.style.gridColumn = "span 2";
+    }
+
+})

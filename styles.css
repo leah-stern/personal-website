@@ -94,8 +94,11 @@ a:hover, .popup button:hover {
 }
 
 img {
-    width: 30vw;
-    max-width: 350px;
+    /* width: 30vw;
+    max-width: 350px; */
+    /* height: 50vh; */
+    max-height: 500px;
+    width: 100%;
     display: block;
 }
 
@@ -113,7 +116,6 @@ figcaption {
 
 .gallery {
     display: grid;
-    grid-auto-rows: 30vh;
     grid-template-columns: 1fr 1fr;
     place-content: center;
     grid-gap: 30px;
