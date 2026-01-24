@@ -94,7 +94,11 @@ a {
 }
 
 a:hover, .popup button:hover {
-    color: #c61ea2;
+    background-color: rgb(244, 244, 104);
+}
+
+.popup button:hover {
+    color: black;
 }
 
 /* .popup button:hover {
@@ -110,8 +114,9 @@ img {
     /* width: 30vw;
     max-width: 350px; */
     /* height: 50vh; */
-    max-height: 500px;
+    /* max-height: 500px; */
     /* width: 100%; */
+    width: 100%;
     display: block;
 }
 
@@ -129,7 +134,7 @@ figcaption {
 
 .gallery {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     place-content: center;
     grid-gap: 30px;
 }
@@ -160,6 +165,7 @@ figcaption {
 
 .popup img {
     max-height: 600px;
+    width: auto;
     margin: auto;
 }
 
@@ -177,4 +183,11 @@ figcaption {
     width: 100px;
     margin: auto;
     font-size: 30px;
+}
+
+/* switch gallery view to 2 columns for viewport sizes under 1000px */
+@media (max-width: 1000px) {
+    .gallery {
+        grid-template-columns: 1fr 1fr;
+    }
 }
