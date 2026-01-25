@@ -72,11 +72,11 @@ galleryImages.forEach((image) => {
     })
 });
 
-galleryImages.forEach((image) => {
-    // if image is landscape, have the image
-    // span 2 columns in the gallery grid
-    if (image.height < image.width) {
-        image.style.gridColumn = "span 2";
-    }
 
-})
+// galleryImages.forEach((image) => {
+//     // if image is landscape, have the image
+//     // span 2 columns in the gallery grid
+//     if (image.naturalHeight < image.naturalWidth) {
+//         image.style.gridColumn = "span 2";
+//     }
+// })
