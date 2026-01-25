@@ -27,7 +27,6 @@ body {
 }
 
 nav ul {
-    width: 70vw;
     display: flex;
     list-style: none;
     justify-content: space-around;
