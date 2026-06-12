@@ -1,0 +1,112 @@
+.lil-window {
+    box-shadow: 2px 3px;
+    height: 500px;
+    width: 500px;
+    background-color: rgba(236, 233, 233, 0.693);
+    border: 1px solid black;
+    position: absolute;
+    top: 25vh;
+    left: 25vw;
+}
+
+.lil-window h2 {
+    font-size: 50px;
+}
+
+.lil-window:hover, 
+.close:hover, 
+.minimize:hover, 
+.full-screen:hover,
+.folder:hover {
+    scale: 1.01;
+    cursor: pointer;
+}
+
+.ctrl-buttons {
+    display: flex;
+    justify-content: flex-end;
+    border-bottom: 0.5px solid black;
+    height: 5%;
+}
+
+.info {
+    height: 90%;
+    padding: 10px;
+    border: 10px solid rgb(236, 233, 233);
+    background-color: rgba(228, 222, 222, 0.649);
+}
+
+footer {
+    width: 100vw;
+    height: 75px;
+    /* background-color: rgba(121, 121, 121, 0.471); */
+    position: fixed;
+    bottom: 0px;
+    text-align: right;
+    padding: 10px;
+}
+
+footer p {
+    margin: 0px 20px;
+}
+
+body {
+    background-image: url("images/photographs/IMG_0012.JPG");
+    background-size: 100vw;
+    background-color: rgb(208, 232, 169);
+    font-family: "Quicksand", sans-serif;
+    /* font-family: "Bitcount Grid Single", system-ui; */
+    margin: 0px;
+}
+
+.folder {
+    /* margin: 20px 20px; */
+    width: 150px;
+}
+
+figure {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 70px;
+}
+
+figure img {
+    width: 250px;
+}
+
+figcaption {
+    /* text-align: center; */
+    color: rgb(0, 0, 0);
+    font-size: 30px;
+}
+
+#websites-window {
+    overflow: scroll;
+}
+
+#websites-window p {
+    font-size: 20px;
+}
+
+.website-info {
+    padding: 10px;
+}
+
+#websites-window a, #websites-window a:visited {
+    color: black;
+}
+
+#websites-window .website-info:hover {
+    background-color: lightyellow;
+}
+
+#photography-window {
+    overflow: scroll;
+}
+
+#photography-window img {
+    display: block;
+    width: 60%;
+    padding: 10px;
+}
