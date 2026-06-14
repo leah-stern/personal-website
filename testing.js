@@ -58,10 +58,14 @@ let allFolders = document.getElementsByClassName("folder");
 for (let i = 0; i < allFolders.length; i++) {
 
     // open a folder by clicking!
-    allFolders[i].addEventListener("click", () => {
-        let [folderType, _] = allFolders[i].id.split("-");
-        createWindow(folderType);
-    })
+    // only for non-photography folders, since the photography folder will open
+    // a new HTML page
+    if (allFolders[i].id != "photography-folder") {
+        allFolders[i].addEventListener("click", () => {
+            let [folderType, _] = allFolders[i].id.split("-");
+            createWindow(folderType);
+        })
+    }
 
     // tilt a folder and change font on hover
     allFolders[i].addEventListener("mouseover", () => {
