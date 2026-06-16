@@ -1,5 +1,33 @@
 let currentPageMain = document.querySelector("main");
-let galleryImages = document.querySelectorAll(".gallery img");
+
+let data = {
+    photos: [
+            "https://res.cloudinary.com/dztbwjpaz/image/upload/v1769364434/IMG_9742_oqnv2x.jpg",
+            "https://res.cloudinary.com/dztbwjpaz/image/upload/v1769364432/IMG_9751_otdltl.jpg",
+            "https://res.cloudinary.com/dztbwjpaz/image/upload/v1769364433/IMG_0012_wcmt5b.jpg",
+            "https://res.cloudinary.com/dztbwjpaz/image/upload/v1769364431/IMG_9770_zfzw1n.jpg",
+            "https://res.cloudinary.com/dztbwjpaz/image/upload/v1769364424/IMG_5882_jbhz0n.jpg",
+            "https://res.cloudinary.com/dztbwjpaz/image/upload/v1769364420/IMG_4089_csvfpn.jpg",
+            "https://res.cloudinary.com/dztbwjpaz/image/upload/v1769364420/IMG_9068_miwigb.jpg",
+            "https://res.cloudinary.com/dztbwjpaz/image/upload/v1769364412/IMG_8704_cpgoy1.jpg",
+            "https://res.cloudinary.com/dztbwjpaz/image/upload/v1769364405/IMG_6928_szdj6p.jpg",
+            "https://res.cloudinary.com/dztbwjpaz/image/upload/v1769364404/IMG_9994_kvcyeg.jpg"
+    ]
+}
+
+let imageGallery = document.getElementById("all-photos");
+displayAllPhotos();
+
+// display all photographs in the photography window
+function displayAllPhotos(photographyWindow) {
+    data.photos.forEach((photoFilePath) => {
+        let img = document.createElement("img");
+        img.src = photoFilePath;
+        imageGallery.appendChild(img);
+    })
+}
+
+let galleryImages = document.querySelectorAll("#all-photos img");
 
 // for each image in a gallery, add an event listener that displays
 // a larger image and details
@@ -71,12 +99,3 @@ galleryImages.forEach((image) => {
         currentPageMain.append(modal);
     })
 });
-
-
-// galleryImages.forEach((image) => {
-//     // if image is landscape, have the image
-//     // span 2 columns in the gallery grid
-//     if (image.naturalHeight < image.naturalWidth) {
-//         image.style.gridColumn = "span 2";
-//     }
-// })

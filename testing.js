@@ -20,16 +20,6 @@ let data = {
          "description": "A WordPress website created for a research fellowship with the Center for Book Arts about independent publishing.",
          "link": "https://indiepublishingcba.wordpress.com"
       }
-   ],
-   "photos": [
-        "images/photographs/IMG_0012.JPG",
-        "images/photographs/IMG_8194.JPG",
-        "images/photographs/IMG_8221.JPG",
-        "images/photographs/IMG_9055.JPG",
-        "images/photographs/IMG_9066.JPG",
-        "images/photographs/IMG_9751.JPG",
-        "images/photographs/IMG_9983.JPG",
-        "images/photographs/IMG_9984.JPG"
    ]
 }
 
@@ -159,9 +149,6 @@ function createWindow(windowType) {
     if (windowType == "websites") {
         newWindow.id = "websites-window";
         displayAllWebsites(newWindow);
-    } else if (windowType == "photography") {
-        newWindow.id = "photography-window";
-        displayAllPhotos(newWindow);
     }
 
     document.body.appendChild(newWindow);
@@ -184,14 +171,5 @@ function displayAllWebsites(websitesWindow) {
         websiteInfoDiv.appendChild(pDescription);
 
         websitesWindow.children[1].appendChild(websiteInfoDiv);
-    })
-}
-
-// display all photographs in the photography window
-function displayAllPhotos(photographyWindow) {
-    data.photos.forEach((photoFilePath) => {
-        let img = document.createElement("img");
-        img.src = photoFilePath;
-        photographyWindow.children[1].appendChild(img);
     })
 }
