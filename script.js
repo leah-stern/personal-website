@@ -31,7 +31,10 @@ let galleryImages = document.querySelectorAll("#all-photos img");
 
 // for each image in a gallery, add an event listener that displays
 // a larger image and details
-galleryImages.forEach((image) => {
+for (let i = 0; i < galleryImages.length; i++) {
+    // current image
+    let image = galleryImages[i];
+
     // get current image src
     let currentImgSrc = image.src;
 
@@ -98,4 +101,4 @@ galleryImages.forEach((image) => {
         // add modal to main
         currentPageMain.append(modal);
     })
-});
+};
