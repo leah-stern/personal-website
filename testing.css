@@ -1,3 +1,22 @@
+header {
+    width: 100vw;
+    padding: 10px;
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+ul {
+    display: flex;
+    justify-content: space-evenly;
+    list-style: none;
+}
+
+li {
+    padding: 10px;
+}
+
 .lil-window {
     box-shadow: 2px 3px;
     height: 500px;
@@ -51,9 +70,9 @@ footer p {
 }
 
 body {
-    background-image: url("images/photographs/IMG_0012.JPG");
-    background-size: 100vw;
-    background-color: rgb(208, 232, 169);
+    /* background-image: url("images/photographs/IMG_0012.JPG");
+    background-size: 100vw; */
+    /* background-color: rgb(208, 232, 169); */
     font-family: "Quicksand", sans-serif;
     /* font-family: "Bitcount Grid Single", system-ui; */
     margin: 0px;
@@ -99,6 +118,10 @@ figcaption {
 
 #websites-window .website-info:hover {
     background-color: lightyellow;
+}
+
+#photography-folder-icon, #bookbinding-folder-icon {
+    scale: 1.5;
 }
 
 #photography-window {

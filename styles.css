@@ -4,7 +4,7 @@
 
 body {
     font-family: var(--main-font);
-    background-color: rgb(225, 222, 222);
+    /* background-color: rgb(225, 222, 222); */
     margin: 0;
 }
 
