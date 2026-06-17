@@ -23,8 +23,6 @@ let data = {
    ]
 }
 
-console.log(data);
-
 document.addEventListener("dragstart", (event) => {
     event.dataTransfer.setData("text/plain", event.target.id);
 });
@@ -49,9 +47,10 @@ for (let i = 0; i < allFolders.length; i++) {
 
     // open a folder by clicking!
     // only for website folder
-    if (allFolders[i].id == "websites-folder") {
+    if (["websites-folder", "about-folder"].includes(allFolders[i].id)) {
         allFolders[i].addEventListener("click", () => {
-            let [folderType, _] = allFolders[i].id.split("-");
+            // let [folderType, _] = allFolders[i].id.split("-");
+            let folderType = allFolders[i].children[1].innerText;
             createWindow(folderType);
         })
     }
@@ -98,12 +97,17 @@ for (let i = 0; i < allCloseButtons.length; i++) {
 }
 
 function createWindow(windowType) {
-    let numExistingWindows = document.getElementsByClassName("lil-window").length;
-
+    // create new popup window
     let newWindow = document.createElement("div");
-    newWindow.id = `window${numExistingWindows+1}`;
     newWindow.className = "lil-window";
     newWindow.draggable = "true";
+
+    // add p tag for this "app" in the taskbar footer
+    let newFooterP = document.createElement("p");
+    newFooterP.innerText = `${windowType}`;
+    newFooterP.className = "footer-app-name";
+    newFooterP.id = `footer-p-${windowType}`;
+    document.getElementById("footer-align-left").appendChild(newFooterP);
 
     newWindow.innerHTML = `
         <div class="ctrl-buttons">
@@ -138,16 +142,20 @@ function createWindow(windowType) {
     // close window event listener
     newCloseButton = newWindow.children[0].children[2];
     newCloseButton.addEventListener("click", () => {
+       document.getElementById(`footer-p-${windowType}`).remove();
        newWindow.remove();
     });
 
-    newWindow.style.top = "30vh";
+    newWindow.style.top = "10vh";
     newWindow.style.left = "30vw";
 
     // call relevant function for window type
-    if (windowType == "websites") {
+    if (windowType == "Websites") {
         newWindow.id = "websites-window";
         displayAllWebsites(newWindow);
+    } else if (windowType == "About") {
+        newWindow.id = "about-window";
+        displayAboutInfo(newWindow);
     }
 
     document.body.appendChild(newWindow);
@@ -171,4 +179,15 @@ function displayAllWebsites(websitesWindow) {
 
         websitesWindow.children[1].appendChild(websiteInfoDiv);
     })
+}
+
+function displayAboutInfo(aboutWindow) {
+    let aboutInfoDiv = document.createElement("div");
+    aboutInfoDiv.className = "about-info";
+
+    let aboutP = document.createElement("p");
+    aboutP.innerText = "This is some information about me";
+    aboutInfoDiv.appendChild(aboutP);
+
+    aboutWindow.children[1].appendChild(aboutInfoDiv);
 }

@@ -21,6 +21,7 @@ body {
 
 .full-page > header {
     width: 20vw;
+    height: 100vh;
     position: fixed;
     font-size: 20px;
     margin-left: 10px;
