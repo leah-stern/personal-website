@@ -48,9 +48,8 @@ let allFolders = document.getElementsByClassName("folder");
 for (let i = 0; i < allFolders.length; i++) {
 
     // open a folder by clicking!
-    // only for non-photography folders, since the photography folder will open
-    // a new HTML page
-    if (allFolders[i].id != "photography-folder") {
+    // only for website folder
+    if (allFolders[i].id == "websites-folder") {
         allFolders[i].addEventListener("click", () => {
             let [folderType, _] = allFolders[i].id.split("-");
             createWindow(folderType);
