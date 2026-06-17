@@ -1,40 +1,53 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
     <head>
-        <meta charset="UTF-8" />
-        <title>Title</title>
-        <link rel="stylesheet" href="styles.css" />
+        <title>Leah</title>
+        <link href="homePage.css" rel="stylesheet">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
-    </head>
+        <link href="https://fonts.googleapis.com/css2?family=Bitcount+Grid+Single:wght@100..900&family=Nabla&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">    </head>
     <body>
-        <div class="full-page">
-            <header>
-                <p id="my-name"><a href="index.html">Leah Stern</a></p>
-                <nav>
-                    <ul>
-                        <li><a href="photographs.html">Photographs</a></li>
-                        <li><a href="bookbinding.html">Bookbinding</a></li>
-                        <li><a href="embroidery.html">Embroidery</a></li>
-                        <li><a href="resume.html">Resume</a></li>
-                        <li><a href="testing.html">Test View</a></li>
-                    </ul>
-                </nav>
-            </header>
+        <!-- <header>
+            <nav>
+                <ul>
+                    <li>About</li>
+                    <li>Resume</li>
+                </ul>
+            </nav>
+            <h1>LeahWrld</h1>
+        </header> -->
+        <main>
+            <figure id="photography-folder" class="folder">
+                <a href="photographs.html"><img id="photography-folder-icon" src="images/icons/kodak.png"></a>
+                <figcaption>Photography</figcaption>
+            </figure>
 
-            <main>
-                <div id="welcome-section">
-                    <h1 id="h1-index-page">Hello!</h1>
-                    <p>I'm Leah! I made this website.</p>
-                    <p>Click the links in the sidebar to see some of my work!</p>
+            <figure id="bookbinding-folder" class="folder">
+                <a href="bookbinding.html"><img id="bookbinding-folder-icon" src="images/icons/book.png"></a>
+                <figcaption>Bookbinding</figcaption>
+            </figure>
+
+            <figure id="websites-folder" class="folder">
+                <img id="websites-folder-icon" src="images/icons/folder.png">
+                <figcaption>Websites</figcaption>
+            </figure>
+            
+            <div class="lil-window" draggable="true" id="window1">
+                <div class="ctrl-buttons">
+                    <button class="full-screen">☐</button>
+                    <button class="minimize">_</button>
+                    <button class="close">X</button>
                 </div>
-            </main>
-        </div>
-        
+                <div class="info">
+                    <h1>Welcome to my desktop!</h1>
+                    <p>Open the folders on the left to check out my work.</p>
+                </div>
+            </div>
+        </main>
         <footer>
-            <p>© Leah Stern 2025</p>
+            <p>© Leah Stern 2026</p>
         </footer>
 
+        <script src="homePage.js"></script>
     </body>
 </html>
