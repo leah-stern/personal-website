@@ -1,33 +1,11 @@
+// get main to add modal window to later
 let currentPageMain = document.querySelector("main");
 
-let data = {
-    photos: [
-            "https://res.cloudinary.com/dztbwjpaz/image/upload/v1769364434/IMG_9742_oqnv2x.jpg",
-            "https://res.cloudinary.com/dztbwjpaz/image/upload/v1769364432/IMG_9751_otdltl.jpg",
-            "https://res.cloudinary.com/dztbwjpaz/image/upload/v1769364433/IMG_0012_wcmt5b.jpg",
-            "https://res.cloudinary.com/dztbwjpaz/image/upload/v1769364431/IMG_9770_zfzw1n.jpg",
-            "https://res.cloudinary.com/dztbwjpaz/image/upload/v1769364424/IMG_5882_jbhz0n.jpg",
-            "https://res.cloudinary.com/dztbwjpaz/image/upload/v1769364420/IMG_4089_csvfpn.jpg",
-            "https://res.cloudinary.com/dztbwjpaz/image/upload/v1769364420/IMG_9068_miwigb.jpg",
-            "https://res.cloudinary.com/dztbwjpaz/image/upload/v1769364412/IMG_8704_cpgoy1.jpg",
-            "https://res.cloudinary.com/dztbwjpaz/image/upload/v1769364405/IMG_6928_szdj6p.jpg",
-            "https://res.cloudinary.com/dztbwjpaz/image/upload/v1769364404/IMG_9994_kvcyeg.jpg"
-    ]
-}
-
-let imageGallery = document.getElementById("all-photos");
-displayAllPhotos();
-
-// display all photographs in the photography window
-function displayAllPhotos(photographyWindow) {
-    data.photos.forEach((photoFilePath) => {
-        let img = document.createElement("img");
-        img.src = photoFilePath;
-        imageGallery.appendChild(img);
-    })
-}
-
+// get all images in the gallery
 let galleryImages = document.querySelectorAll("#all-photos img");
+
+// tracks current image enlarged in modal window
+let currentImageIndex = 0;
 
 // for each image in a gallery, add an event listener that displays
 // a larger image and details
@@ -40,6 +18,10 @@ for (let i = 0; i < galleryImages.length; i++) {
 
     // create modal on image click
     image.addEventListener("click", () => {
+        // set currentImageIndex for image carousel to the index
+        // for the image clicked on
+        currentImageIndex = i;
+
         // check if there is currently a modal open and close it if so
         let checkForOpenModal = document.querySelector(".popup");
         if (checkForOpenModal) {
@@ -79,12 +61,25 @@ for (let i = 0; i < galleryImages.length; i++) {
         let carouselNav = document.createElement("div");
         carouselNav.id = "carousel-nav-container";
 
-        // add backward and forward carousel buttons to div
+        // add backward button to modal div
         let backwardButton = document.createElement("button");
         backwardButton.innerHTML = "<";
 
+        // update image index to previous image if forward button clicked
+        backwardButton.addEventListener("click", () => {
+            currentImageIndex = (currentImageIndex - 1 + galleryImages.length) % galleryImages.length;
+            image.src = galleryImages[currentImageIndex].src;
+        });
+
+        // add forward carousel button to modal div
         let forwardButton = document.createElement("button");
         forwardButton.innerHTML = ">";
+
+        // update image index to next image if forward button clicked
+        forwardButton.addEventListener("click", () => {
+            currentImageIndex = (currentImageIndex + 1) % galleryImages.length;
+            image.src = galleryImages[currentImageIndex].src;
+        });
 
         carouselNav.append(backwardButton, forwardButton);
         modal.append(carouselNav);
@@ -94,9 +89,11 @@ for (let i = 0; i < galleryImages.length; i++) {
         });
 
         // click anywhere to close modal
-        modal.addEventListener("click", () => {
-            modal.remove();
-        });
+        // commented out for now because it interferes with
+        // image carousel button functionality
+        // modal.addEventListener("click", () => {
+        //     modal.remove();
+        // });
 
         // add modal to main
         currentPageMain.append(modal);
