@@ -107,6 +107,14 @@ img {
     display: block;
 }
 
+#all-books {
+    display: block;
+}
+
+#all-books img {
+    margin-bottom: 20px;
+}
+
 figcaption {
     display: none;
 }
