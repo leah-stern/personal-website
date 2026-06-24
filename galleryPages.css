@@ -107,6 +107,10 @@ img {
     display: block;
 }
 
+.gallery img:hover, button:hover {
+    cursor: pointer;
+}
+
 #all-books {
     display: block;
 }
