@@ -111,40 +111,39 @@ function createWindow(windowType) {
 
     newWindow.innerHTML = `
         <div class="ctrl-buttons">
-            <button class="full-screen">☐</button>
-            <button class="minimize">_</button>
             <button class="close">X</button>
+            <button class="minimize">_</button>
+            <button class="full-screen">☐</button>
         </div>
         <div class="info">
             <h2>${windowType}</h2>
         </div>
     `;
+
+    // close window event listener
+    newCloseButton = newWindow.children[0].children[0];
+    newCloseButton.addEventListener("click", () => {
+       document.getElementById(`footer-p-${windowType}`).remove();
+       newWindow.remove();
+    });
     
+    // minimize window event listener
+    newCloseButton = newWindow.children[0].children[1];
+    newCloseButton.addEventListener("click", () => {
+    newWindow.style.width = "";
+        newWindow.style.height = "";
+        newWindow.style.top = "";
+        newWindow.style.left = "";
+    });
+
     // enlarge window event listener
-    newEnlargeButton = newWindow.children[0].children[0];
+    newEnlargeButton = newWindow.children[0].children[2];
     newEnlargeButton.addEventListener("click", () => {
         newWindow.style.width = "80vw";
         newWindow.style.height = "80vh";
         newWindow.style.top = "20px";
         newWindow.style.left = "20px";
     })
-
-    // minimize window event listener
-    newCloseButton = newWindow.children[0].children[1];
-    newCloseButton.addEventListener("click", () => {
-       newWindow.style.width = "";
-        newWindow.style.height = "";
-        newWindow.style.top = "";
-        newWindow.style.left = "";
-    });
-
-    
-    // close window event listener
-    newCloseButton = newWindow.children[0].children[2];
-    newCloseButton.addEventListener("click", () => {
-       document.getElementById(`footer-p-${windowType}`).remove();
-       newWindow.remove();
-    });
 
     newWindow.style.top = "10vh";
     newWindow.style.left = "30vw";

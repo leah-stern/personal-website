@@ -25,7 +25,6 @@ li {
 
 .lil-window {
     box-shadow: 2px 3px;
-    height: 500px;
     width: 500px;
     background-color: rgba(236, 233, 233, 0.693);
     border: 1px solid black;
@@ -49,13 +48,12 @@ li {
 
 .ctrl-buttons {
     display: flex;
-    justify-content: flex-end;
+    justify-content: flex-start;
     border-bottom: 0.5px solid black;
     height: 5%;
 }
 
 .info {
-    height: 90%;
     padding: 10px;
     border: 10px solid rgb(236, 233, 233);
     background-color: rgba(228, 222, 222, 0.649);
@@ -131,6 +129,7 @@ figcaption {
 }
 
 #websites-window {
+    height: 60vh;
     overflow: scroll;
 }
 
