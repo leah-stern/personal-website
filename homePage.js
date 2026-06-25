@@ -51,7 +51,11 @@ for (let i = 0; i < allFolders.length; i++) {
         allFolders[i].addEventListener("click", () => {
             // let [folderType, _] = allFolders[i].id.split("-");
             let folderType = allFolders[i].children[1].innerText;
-            createWindow(folderType);
+
+            // only open folder window if it is not open already
+            if (!document.getElementById(`${folderType.toLowerCase()}-window`)) {
+                createWindow(folderType);
+            }
         })
     }
 
