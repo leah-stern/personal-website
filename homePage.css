@@ -114,6 +114,16 @@ body {
     align-self: flex-end;
 }
 
+.about-info {
+    display: flex;
+    flex-direction: column;
+}
+
+#about-pic {
+    width: 200px;
+    align-self: flex-end;
+}
+
 figure {
     display: flex;
     flex-direction: column;

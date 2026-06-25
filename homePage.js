@@ -188,9 +188,15 @@ function displayAboutInfo(aboutWindow) {
     let aboutInfoDiv = document.createElement("div");
     aboutInfoDiv.className = "about-info";
 
-    let aboutP = document.createElement("p");
-    aboutP.innerText = "This is some information about me";
-    aboutInfoDiv.appendChild(aboutP);
+    // let aboutP = document.createElement("p");
+    aboutInfoDiv.innerHTML = `
+        <p>Hellooo I'm Leah! I am an educator and aspiring librarian/archivist.
+        This is a little web page I made to display even more things I made.
+        Still a work in progress but please browse around!</p>
+
+        <img src="images/about-pic.png" alt="a selfie of Leah" id="about-pic">
+    `;
+    // aboutInfoDiv.appendChild(aboutP);
 
     aboutWindow.children[1].appendChild(aboutInfoDiv);
 }
