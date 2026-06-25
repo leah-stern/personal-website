@@ -4,8 +4,21 @@
 
 body {
     font-family: var(--main-font);
-    /* background-color: rgb(225, 222, 222); */
+    background-color: rgb(29, 45, 57);
+    color: white;
     margin: 0;
+}
+
+.back-arrow {
+    font-size: 30px;
+}
+
+a {
+    color: white;
+}
+
+h1 {
+    color: rgb(29, 45, 57);
 }
 
 #my-name {
@@ -90,11 +103,11 @@ footer {
 
 a {
     text-decoration: none;
-    color: black;
 }
 
 a:hover, .popup button:hover {
     background-color: rgb(244, 244, 104);
+    color: rgb(29, 45, 57);
 }
 
 .popup button:hover {
