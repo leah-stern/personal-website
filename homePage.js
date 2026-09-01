@@ -194,7 +194,7 @@ function displayAboutInfo(aboutWindow) {
         This is a little web page I made to display even more things I made.
         Still a work in progress but please browse around!</p>
 
-        <img src="images/me.jpg" alt="a selfie of Leah" id="about-pic">
+        <img src="images/me.png" alt="a selfie of Leah" id="about-pic">
     `;
     // aboutInfoDiv.appendChild(aboutP);
 
