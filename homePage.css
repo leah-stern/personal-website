@@ -179,3 +179,30 @@ figcaption {
     width: 60%;
     padding: 10px;
 }
+
+#oops {
+    animation-name: fade;
+    animation-duration: 5s;
+    color: red;
+    font-size: 60px;
+    font-weight: bold;
+    position: absolute;
+    top: 50vh;
+    width: 100vw;
+    text-align: center;
+}
+
+@keyframes fade {
+    0% {
+        opacity: 0;
+    }
+
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}

@@ -25,6 +25,14 @@ let data = {
 
 document.addEventListener("dragstart", (event) => {
     event.dataTransfer.setData("text/plain", event.target.id);
+
+    let oopsText = document.createElement("p");
+    oopsText.id = "oops";
+    oopsText.innerHTML = "🚨 DRAG N DROP CONSTRUCTION ZONE 🚨";
+    document.body.append(oopsText);
+
+    setTimeout(() => oopsText.remove(), 5000);
+    
 });
 
 document.addEventListener("dragover", function(event) {
