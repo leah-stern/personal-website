@@ -25,12 +25,13 @@ li {
 
 .lil-window {
     box-shadow: 2px 3px;
-    width: 500px;
+    width: 50vw;
     background-color: rgba(236, 233, 233, 0.693);
     border: 1px solid black;
     position: absolute;
     top: 25vh;
     left: 25vw;
+    box-sizing: border-box;
 }
 
 .lil-window h2 {
@@ -57,6 +58,8 @@ li {
     padding: 10px;
     border: 10px solid rgb(236, 233, 233);
     background-color: rgba(228, 222, 222, 0.649);
+    height: 95%;
+    box-sizing: border-box;
 }
 
 footer {
